@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "hold-to-attack",
+	"version": "${version}",
+	"name": "Hold to Attack",
+	"description": "TBD",
+	"authors": [
+		"KeeningDawn"
+	],
+	"contact": {
+		"issues": "https://github.com/KeeningDawn/hold-to-attack/issues",
+		"sources": "https://github.com/KeeningDawn/hold-to-attack"
+	},
+	"license": "GPL-3.0-or-later",
+	"icon": "assets/hold-to-attack/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.github.keeningdawn.holdtoattack.HoldToAttack"
+		],
+		"client": [
+			"io.github.keeningdawn.holdtoattack.client.HoldToAttackClient"
+		]
+	},
+	"mixins": [
+		"hold-to-attack.mixins.json",
+		{
+			"config": "hold-to-attack.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

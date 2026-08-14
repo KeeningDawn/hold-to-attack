@@ -1,2 +1,5 @@
-# hold-to-attack
-Did you appreciate the seemingly forgotten optional combat snapshot's "Hold to Attack" feature? Me too.
+# Hold to Attack
+
+## Setup
+
+For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
