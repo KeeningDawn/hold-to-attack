@@ -23,11 +23,16 @@ import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import me.shedaniel.clothconfig2.gui.entries.IntegerListEntry;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.chat.Component;
 
 public class HoldToAttackModMenuIntegration implements ModMenuApi {
   @Override
   public ConfigScreenFactory<?> getModConfigScreenFactory() {
+    // Cloth Config is an optional dependency, no config screen without it.
+    if (!FabricLoader.getInstance().isModLoaded("cloth-config")) {
+      return null;
+    }
     return parent -> {
       HoldToAttackConfig config = HoldToAttackConfig.get();
 
