@@ -14,20 +14,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
-package io.github.keeningdawn.holdtoattack.client;
+package io.github.keeningdawn.holdtoattack.client.mixin;
 
-import io.github.keeningdawn.holdtoattack.HoldToAttack;
-import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.minecraft.client.Minecraft;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.gen.Invoker;
 
-public class HoldToAttackClient implements ClientModInitializer {
-  @Override
-  public void onInitializeClient() {
-    HoldToAttackConfig config = HoldToAttackConfig.load();
-
-    HoldToAttackKeybinds.register();
-    ClientTickEvents.END_CLIENT_TICK.register(new AutoAttackHandler(config));
-
-    HoldToAttack.LOGGER.info("Hold to Attack initialized");
-  }
+@Mixin(Minecraft.class)
+public interface MinecraftInvokerMixin {
+  @Invoker("startAttack")
+  boolean holdToAttack$startAttack();
 }

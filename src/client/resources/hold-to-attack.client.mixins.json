@@ -3,7 +3,7 @@
 	"package": "io.github.keeningdawn.holdtoattack.client.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"ExampleClientMixin"
+		"MinecraftInvokerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

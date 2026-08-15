@@ -17,17 +17,18 @@
 package io.github.keeningdawn.holdtoattack.client;
 
 import io.github.keeningdawn.holdtoattack.HoldToAttack;
-import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
+import net.minecraft.client.KeyMapping;
+import org.lwjgl.glfw.GLFW;
 
-public class HoldToAttackClient implements ClientModInitializer {
-  @Override
-  public void onInitializeClient() {
-    HoldToAttackConfig config = HoldToAttackConfig.load();
+public class HoldToAttackKeybinds {
+  private static final KeyMapping.Category CATEGORY =
+      KeyMapping.Category.register(HoldToAttack.id("main"));
 
-    HoldToAttackKeybinds.register();
-    ClientTickEvents.END_CLIENT_TICK.register(new AutoAttackHandler(config));
+  public static final KeyMapping TOGGLE_ENABLED =
+      new KeyMapping("key.hold-to-attack.toggle_enabled", GLFW.GLFW_KEY_UNKNOWN, CATEGORY);
 
-    HoldToAttack.LOGGER.info("Hold to Attack initialized");
+  public static void register() {
+    KeyMappingHelper.registerKeyMapping(TOGGLE_ENABLED);
   }
 }

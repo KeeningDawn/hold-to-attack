@@ -3,7 +3,7 @@
 	"id": "hold-to-attack",
 	"version": "${version}",
 	"name": "Hold to Attack",
-	"description": "TBD",
+	"description": "Remember Jeb's combat snapshot? Me too. Hold the attack button to continuously attack.",
 	"authors": [
 		"KeeningDawn"
 	],
@@ -13,17 +13,19 @@
 	},
 	"license": "GPL-3.0-or-later",
 	"icon": "assets/hold-to-attack/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
 		"main": [
 			"io.github.keeningdawn.holdtoattack.HoldToAttack"
 		],
 		"client": [
 			"io.github.keeningdawn.holdtoattack.client.HoldToAttackClient"
+		],
+		"modmenu": [
+			"io.github.keeningdawn.holdtoattack.client.HoldToAttackModMenuIntegration"
 		]
 	},
 	"mixins": [
-		"hold-to-attack.mixins.json",
 		{
 			"config": "hold-to-attack.client.mixins.json",
 			"environment": "client"
@@ -34,5 +36,8 @@
 		"minecraft": "~26.2",
 		"java": ">=25",
 		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*"
 	}
 }

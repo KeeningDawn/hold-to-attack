@@ -1,0 +1,13 @@
+{
+  "key.categories.hold-to-attack": "Hold to Attack",
+  "key.hold-to-attack.toggle_enabled": "Toggle Hold to Attack",
+  "title.hold-to-attack.config": "Hold to Attack",
+  "category.hold-to-attack.general": "General",
+  "option.hold-to-attack.enabled": "Enable Hold to Attack",
+  "option.hold-to-attack.random_delay_enabled": "Randomize Swing Delay",
+  "option.hold-to-attack.random_delay_min_ms": "Min Delay (ms)",
+  "option.hold-to-attack.random_delay_max_ms": "Max Delay (ms)",
+  "option.hold-to-attack.random_delay_max_too_low": "Max delay must be at least the min delay",
+  "message.hold-to-attack.enabled": "Hold to Attack: ON",
+  "message.hold-to-attack.disabled": "Hold to Attack: OFF"
+}
