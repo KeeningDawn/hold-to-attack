@@ -35,14 +35,15 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	// Cloth Config, bundled via include() so users don't need to install it separately.
-	def clothConfig = implementation("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}")
-	clothConfig.exclude(group: "net.fabricmc.fabric-api")
-	include clothConfig
-
 	// ModMenu, optional integration only, not bundled or required at runtime for users.
 	compileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
 	runtimeOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+
+	// Cloth Config, optional dependency, not bundled. Users need it installed for the in-game config screen.
+	def clothConfig = compileOnly("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}")
+	clothConfig.exclude(group: "net.fabricmc.fabric-api")
+	def clothConfigRuntime = localRuntime("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}")
+	clothConfigRuntime.exclude(group: "net.fabricmc.fabric-api")
 }
 
 processResources {
