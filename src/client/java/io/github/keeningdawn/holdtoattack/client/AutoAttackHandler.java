@@ -44,6 +44,10 @@ public class AutoAttackHandler implements ClientTickEvents.EndTick {
       cooldownReadyLastTick = false;
       return;
     }
+    if (mc.player.isUsingItem()) {
+      // block during bow/crossbow charging, trident throw windup, etc.
+      return;
+    }
 
     float scale = mc.player.getAttackStrengthScale(0f);
     boolean cooldownReadyNow = scale >= 1.0f;
