@@ -92,7 +92,7 @@ public class AutoAttackHandler implements ClientTickEvents.EndTick {
       if (mc.player != null) {
         String key =
             config.enabled ? "message.hold-to-attack.enabled" : "message.hold-to-attack.disabled";
-        mc.player.sendOverlayMessage(Component.translatable(key));
+        mc.player.displayClientMessage(Component.translatable(key), true);
       }
     }
   }

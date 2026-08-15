@@ -17,7 +17,7 @@
 package io.github.keeningdawn.holdtoattack.client;
 
 import io.github.keeningdawn.holdtoattack.HoldToAttack;
-import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.KeyMapping;
 import org.lwjgl.glfw.GLFW;
 
@@ -29,6 +29,6 @@ public class HoldToAttackKeybinds {
       new KeyMapping("key.hold-to-attack.toggle_enabled", GLFW.GLFW_KEY_UNKNOWN, CATEGORY);
 
   public static void register() {
-    KeyMappingHelper.registerKeyMapping(TOGGLE_ENABLED);
+    KeyBindingHelper.registerKeyBinding(TOGGLE_ENABLED);
   }
 }
