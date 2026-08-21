@@ -24,3 +24,7 @@ Even more annoyed when they'd let it rip when cooldowns are disabled? Twins.
 Use at your own risk. Some servers may consider this mod an unfair advantage (cheating.) Servers that do not allow an auto clicker will not allow this mod. They achieve similar end-results.
 
 Ask the server's staff team prior to using this mod in multiplayer.
+
+## License
+
+Licensed under [GPL-3.0-or-later](LICENSE)
